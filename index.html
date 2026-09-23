@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание сайтов в Казахстане | Студия нового поколения</title>
+    <meta name="description" content="Разработка умных сайтов с AI-интеграцией для бизнеса. Бесплатный прототип до оплаты. Официальный договор РК, оплата 50/50. Запуск от 5 дней.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Создание сайтов в Казахстане | Студия нового поколения">
+    <meta property="og:description" content="Разработка умных сайтов с AI-интеграцией для бизнеса. Бесплатный прототип до оплаты. Официальный договор РК, оплата 50/50. Запуск от 5 дней.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_KZ">
+    
+    <!-- Google Fonts: Inter, Manrope, Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- JSON-LD SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebDesignCompany",
+      "name": "NEXUS Web Studio",
+      "url": "https://nexus-studio.kz",
+      "logo": "https://nexus-studio.kz/logo.png",
+      "description": "Разработка умных сайтов для бизнеса в Казахстане.",
+      "telephone": "+77770000000",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Алматы",
+        "addressCountry": "KZ"
+      },
+      "priceRange": "$$$"
+    }
+    </script>
+</head>
+<body>
+    <!-- БЛОК 1: HEADER -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <div class="header-logo">
+                <a href="/" class="logo-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon">
+                        <rect x="2" y="2" width="20" height="20" rx="4" fill="var(--color-primary)"/>
+                        <path d="M7 16L12 8L17 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div class="logo-text">
+                        <span class="logo-title">NEXUS</span>
+                        <span class="logo-subtitle">Студия веб-разработки</span>
+                    </div>
+                </a>
+            </div>
+            
+            <nav class="header-nav">
+                <a href="#pricing" class="nav-link">Услуги и цены</a>
+                <a href="#portfolio" class="nav-link">Портфолио</a>
+                <a href="#calculator" class="nav-link">Калькулятор</a>
+                <a href="#workflow" class="nav-link">Этапы работы</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#contacts" class="nav-link">Контакты</a>
+            </nav>
+
+            <div class="header-actions">
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Принимаем заявки</span>
+                </div>
+                <a href="tel:+77770000000" class="header-phone">+7 (777) 000-00-00</a>
+                <button class="btn btn-primary btn-sm" onclick="openModal('contactModal')">Обсудить проект</button>
+                <button class="burger-btn" aria-label="Открыть меню">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- БЛОК 2: HERO-ЭКРАН -->
+        <section class="section hero-section" id="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge badge-accent hero-badge">🚀 Разработка сайтов под ключ в Казахстане • Запуск от 5 дней</div>
+                    <h1 class="hero-title">Создаем умные сайты с AI-интеграцией, которые окупаются с первого месяца</h1>
+                    <p class="hero-subtitle">Индивидуальный трендовый дизайн без чужих шаблонов. Бесплатный прототип первого экрана до предоплаты. Пожизненная гарантия на код по договору.</p>
+                    
+                    <form class="hero-form" onsubmit="event.preventDefault(); submitHeroForm();">
+                        <div class="form-inline">
+                            <input type="tel" class="input-field phone-mask" placeholder="Ваш номер телефона (+7 ...)" required>
+                            <button type="submit" class="btn btn-primary">Получить концепт бесплатно &rarr;</button>
+                        </div>
+                        <div class="form-note">🔒 Ответим в WhatsApp в течение 10 минут. Никакого спама.</div>
+                    </form>
+
+                    <ul class="hero-trust-list">
+                        <li>
+                            <svg class="trust-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/></svg>
+                            Скорость загрузки 95+ по Google PageSpeed
+                        </li>
+                        <li>
+                            <svg class="trust-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-1.998A11.954 11.954 0 0110 1.944zM10 14a4 4 0 100-8 4 4 0 000 8zm-2-4a2 2 0 114 0 2 2 0 01-4 0z" clip-rule="evenodd"/></svg>
+                            Оплата 50/50 после утверждения
+                        </li>
+                        <li>
+                            <svg class="trust-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd"/><path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"/></svg>
+                            Домен, SSL и хостинг на год в подарок
+                        </li>
+                    </ul>
+                </div>
+                <div class="hero-visual">
+                    <div class="laptop-mockup">
+                        <div class="laptop-screen">
+                            <div class="laptop-content bg-gradient">
+                                <div class="mockup-ui">
+                                    <div class="mockup-header"></div>
+                                    <div class="mockup-hero"></div>
+                                    <div class="mockup-cards">
+                                        <div class="m-card"></div>
+                                        <div class="m-card"></div>
+                                        <div class="m-card"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="laptop-base"></div>
+                        
+                        <!-- Floating metrics -->
+                        <div class="floating-badge badge-speed">
+                            <div class="circle pulse-green">99</div>
+                            <span>Google PageSpeed</span>
+                        </div>
+                        <div class="floating-badge badge-kaspi">
+                            <span class="badge-red">Kaspi</span>
+                            <span>Интеграция 0-0-12</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 3: БЕГУЩАЯ СТРОКА (TICKER) -->
+        <div class="ticker-wrapper">
+            <div class="ticker-track">
+                <div class="ticker-content">
+                    <span class="ticker-item">UX/UI ДИЗАЙН</span>
+                    <span class="ticker-separator">✦</span>
+                    <span class="ticker-item">ИНТЕГРАЦИЯ AI-БОТОВ</span>
+                    <span class="ticker-separator">✦</span>
+                    <span class="ticker-item">ЧИСТЫЙ КОД</span>
+                    <span class="ticker-separator">✦</span>
+                    <span class="ticker-item">АДАПТИВНОСТЬ 100%</span>
+                    <span class="ticker-separator">✦</span>
+                    <span class="ticker-item">БЫСТРЫЙ ЗАПУСК ОТ 5 ДНЕЙ</span>
+                    <span class="ticker-separator">✦</span>
+                    <span class="ticker-item">ПОДКЛЮЧЕНИЕ KASPI / HALYK</span>
+                    <span class="ticker-separator">✦</span>
+                    <span class="ticker-item">ДОГОВОР И ГАРАНТИЯ</span>
+                    <span class="ticker-separator">✦</span>
+                    <span class="ticker-item">БЕЗ АБОНПЛАТЫ ЗА ПОДДЕРЖКУ</span>
+                    <span class="ticker-separator">✦</span>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="ticker-content" aria-hidden="true">
+                    <span class="ticker-item">UX/UI ДИЗАЙН</span>
+                    <span class="ticker-separator">✦</span>
+                    <span class="ticker-item">ИНТЕГРАЦИЯ AI-БОТОВ</span>
+                    <span class="ticker-separator">✦</span>
+                    <span class="ticker-item">ЧИСТЫЙ КОД</span>
+                    <span class="ticker-separator">✦</span>
+                    <span class="ticker-item">АДАПТИВНОСТЬ 100%</span>
+                    <span class="ticker-separator">✦</span>
+                    <span class="ticker-item">БЫСТРЫЙ ЗАПУСК ОТ 5 ДНЕЙ</span>
+                    <span class="ticker-separator">✦</span>
+                    <span class="ticker-item">ПОДКЛЮЧЕНИЕ KASPI / HALYK</span>
+                    <span class="ticker-separator">✦</span>
+                    <span class="ticker-item">ДОГОВОР И ГАРАНТИЯ</span>
+                    <span class="ticker-separator">✦</span>
+                    <span class="ticker-item">БЕЗ АБОНПЛАТЫ ЗА ПОДДЕРЖКУ</span>
+                    <span class="ticker-separator">✦</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- БЛОК 4: КРЮЧОК ДОВЕРИЯ -->
+        <section class="section section-surface" id="concept">
+            <div class="container">
+                <div class="concept-card card">
+                    <div class="concept-header">
+                        <div class="badge badge-trust">100% БЕЗОПАСНОСТЬ СДЕЛКИ</div>
+                        <h2 class="section-title">Вы увидите дизайн и структуру своего сайта ДО внесения предоплаты</h2>
+                        <p class="section-subtitle">Мы не просим платить за "кота в мешке". Оставьте заявку — наш ведущий дизайнер разработает интерактивный кликабельный концепт первого экрана под вашу нишу совершенно бесплатно. Если вам понравится — заключаем официальный договор. Если нет — концепт остается у вас.</p>
+                    </div>
+                    
+                    <div class="comparison-grid">
+                        <div class="compare-item negative">
+                            <div class="compare-title">Обычные студии</div>
+                            <ul class="compare-list">
+                                <li><span class="icon cross">×</span> Берут 50% предоплаты сразу</li>
+                                <li><span class="icon cross">×</span> Месяц делают дизайн в тайне</li>
+                                <li><span class="icon cross">×</span> Если не понравилось — деньги не вернуть</li>
+                            </ul>
+                        </div>
+                        <div class="compare-item positive">
+                            <div class="compare-title">Наш подход</div>
+                            <ul class="compare-list">
+                                <li><span class="icon check">✓</span> <strong>Бесплатный эскиз</strong> за 24 часа</li>
+                                <li><span class="icon check">✓</span> Согласование стиля до оплаты</li>
+                                <li><span class="icon check">✓</span> Договор только после утверждения</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="concept-cta">
+                        <form class="concept-form form-inline" onsubmit="event.preventDefault(); submitConceptForm();">
+                            <input type="text" class="input-field" placeholder="Ваша ниша бизнеса (напр. Стоматология)" required>
+                            <input type="tel" class="input-field phone-mask" placeholder="Телефон для связи" required>
+                            <button type="submit" class="btn btn-primary">Заказать бесплатный концепт &rarr;</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 5: ТАРИФНАЯ СЕТКА -->
+        <section class="section section-light" id="pricing">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Прозрачные тарифы под любые задачи вашего бизнеса</h2>
+                    <p class="section-subtitle">Фиксированная стоимость в договоре. Никаких скрытых платежей в процессе разработки.</p>
+                </div>
+                
+                <div class="pricing-grid">
+                    <!-- Тариф 1 -->
+                    <div class="pricing-card card">
+                        <h3 class="pricing-name">Лендинг пейдж</h3>
+                        <div class="pricing-price text-numeric">от 95 000 ₸</div>
+                        <div class="pricing-time">Срок: 3–5 рабочих дней</div>
+                        <p class="pricing-desc">Для быстрого запуска рекламы, тестирования новой ниши, моно-товара или услуги.</p>
+                        <ul class="pricing-features">
+                            <li><span class="icon check">✓</span> До 7 блоков</li>
+                            <li><span class="icon check">✓</span> Продающий копирайтинг</li>
+                            <li><span class="icon check">✓</span> Индивидуальный дизайн</li>
+                            <li><span class="icon check">✓</span> Интеграция с WhatsApp</li>
+                        </ul>
+                        <a href="https://wa.me/77770000000?text=Здравствуйте!%20Хочу%20заказать%20тариф%20Лендинг%20за%2095%20000%20тг" target="_blank" class="btn btn-secondary w-full">Выбрать тариф</a>
+                    </div>
+                    
+                    <!-- Тариф 2 (Хит продаж) -->
+                    <div class="pricing-card card pricing-popular">
+                        <div class="popular-badge">ХИТ ПРОДАЖ • 72% ВЫБИРАЮТ ЭТОТ ТАРИФ</div>
+                        <h3 class="pricing-name">Сайт-визитка / Каталог</h3>
+                        <div class="pricing-price text-numeric">от 160 000 ₸</div>
+                        <div class="pricing-time">Срок: 5–7 рабочих дней</div>
+                        <p class="pricing-desc">Для полноценного присутствия компании в сети с каталогом услуг или продукции.</p>
+                        <ul class="pricing-features">
+                            <li><span class="icon check">✓</span> До 15 блоков / 5 страниц</li>
+                            <li><span class="icon check">✓</span> Удобная админ-панель</li>
+                            <li><span class="icon check">✓</span> Каталог товаров/услуг</li>
+                            <li><span class="icon check">✓</span> Базовое SEO</li>
+                        </ul>
+                        <a href="https://wa.me/77770000000?text=Здравствуйте!%20Хочу%20заказать%20тариф%20Каталог%20за%20160%20000%20тг" target="_blank" class="btn btn-primary w-full">Выбрать тариф</a>
+                    </div>
+                    
+                    <!-- Тариф 3 -->
+                    <div class="pricing-card card">
+                        <h3 class="pricing-name">Корпоративный сайт</h3>
+                        <div class="pricing-price text-numeric">от 260 000 ₸</div>
+                        <div class="pricing-time">Срок: 7–12 рабочих дней</div>
+                        <p class="pricing-desc">Для B2B-сектора, производственных компаний, дистрибьюторов и сервисов.</p>
+                        <ul class="pricing-features">
+                            <li><span class="icon check">✓</span> Разветвленная структура</li>
+                            <li><span class="icon check">✓</span> Блог / Новости</li>
+                            <li><span class="icon check">✓</span> Мультиязычность (каз, рус, англ)</li>
+                            <li><span class="icon check">✓</span> Интеграция с CRM</li>
+                        </ul>
+                        <a href="https://wa.me/77770000000?text=Здравствуйте!%20Хочу%20заказать%20Корпоративный%20сайт" target="_blank" class="btn btn-secondary w-full">Выбрать тариф</a>
+                    </div>
+                    
+                    <!-- Тариф 4 -->
+                    <div class="pricing-card card">
+                        <h3 class="pricing-name">Интернет-магазин</h3>
+                        <div class="pricing-price text-numeric">от 360 000 ₸</div>
+                        <div class="pricing-time">Срок: 12–18 рабочих дней</div>
+                        <p class="pricing-desc">Для полноценных онлайн-продаж физических товаров по всему Казахстану.</p>
+                        <ul class="pricing-features">
+                            <li><span class="icon check">✓</span> Умные фильтры и поиск</li>
+                            <li><span class="icon check">✓</span> Личный кабинет</li>
+                            <li><span class="icon check">✓</span> Интеграция Kaspi Pay</li>
+                            <li><span class="icon check">✓</span> Расчет стоимости доставки</li>
+                        </ul>
+                        <a href="https://wa.me/77770000000?text=Здравствуйте!%20Хочу%20заказать%20Интернет-магазин" target="_blank" class="btn btn-secondary w-full">Выбрать тариф</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 6: ЧЕК-ЛИСТ (ЧТО ВХОДИТ В СТОИМОСТЬ) -->
+        <section class="section section-surface" id="included">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Всё необходимое уже включено в стоимость разработки</h2>
+                    <p class="section-subtitle">Мы сдаем готовый инструмент, который работает сразу после сдачи — без дополнительных расходов.</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card card">
+                        <div class="feature-icon-wrapper">🌐</div>
+                        <h4 class="feature-title">Домен и хостинг на 1 год бесплатно</h4>
+                        <p class="feature-desc">Регистрируем надежный скоростной хостинг и красивый домен в зоне .kz абсолютно бесплатно.</p>
+                    </div>
+                    <div class="feature-card card">
+                        <div class="feature-icon-wrapper">🔒</div>
+                        <h4 class="feature-title">SSL-сертификат безопасности</h4>
+                        <p class="feature-desc">Защищенный протокол https, который вызывает доверие браузеров (зеленый замочек) и платежных систем.</p>
+                    </div>
+                    <div class="feature-card card">
+                        <div class="feature-icon-wrapper">📱</div>
+                        <h4 class="feature-title">Идеальная мобильная адаптация</h4>
+                        <p class="feature-desc">Сайт превосходно открывается и быстро работает на всех смартфонах, планшетах и 4K-мониторах.</p>
+                    </div>
+                    <div class="feature-card card">
+                        <div class="feature-icon-wrapper">📈</div>
+                        <h4 class="feature-title">Базовая SEO-оптимизация</h4>
+                        <p class="feature-desc">Чистые мета-теги Title, Description, разметка OpenGraph для соцсетей и карта сайта sitemap.xml.</p>
+                    </div>
+                    <div class="feature-card card">
+                        <div class="feature-icon-wrapper">⚙️</div>
+                        <h4 class="feature-title">Простая админ-панель</h4>
+                        <p class="feature-desc">Легкое управление текстами, ценами и фотографиями без привлечения программиста.</p>
+                    </div>
+                    <div class="feature-card card">
+                        <div class="feature-icon-wrapper">🎓</div>
+                        <h4 class="feature-title">Обучение и видеоинструкция</h4>
+                        <p class="feature-desc">Персонально покажем, как работать с сайтом, и запишем короткие видеоуроки для вашей команды.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 7: ИНТЕРАКТИВНОЕ ПОРТФОЛИО -->
+        <section class="section section-light" id="portfolio">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Наши работы: решения, которые приносят прибыль</h2>
+                    <p class="section-subtitle">Посмотрите интерактивные макеты реальных проектов прямо здесь — без перехода на внешние сайты.</p>
+                </div>
+                
+                <div class="portfolio-container">
+                    <!-- Левая колонка со списком кейсов -->
+                    <div class="portfolio-list">
+                        <!-- Case 1 (Active) -->
+                        <div class="portfolio-item card active" onclick="switchPortfolio(1)">
+                            <h4 class="portfolio-name">Aura Jewelry</h4>
+                            <p class="portfolio-niche">Премиальный интернет-магазин ювелирных изделий</p>
+                            <div class="portfolio-meta">
+                                <span class="badge badge-outline">Срок: 12 дней</span>
+                                <span class="portfolio-result">Рост заявок в 3 раза</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Case 2 -->
+                        <div class="portfolio-item card" onclick="switchPortfolio(2)">
+                            <h4 class="portfolio-name">StroyTrans Logistic</h4>
+                            <p class="portfolio-niche">Корпоративный сайт грузоперевозок по Казахстану и СНГ</p>
+                            <div class="portfolio-meta">
+                                <span class="badge badge-outline">Срок: 8 дней</span>
+                                <span class="portfolio-result">3 языковые версии</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Case 3 -->
+                        <div class="portfolio-item card" onclick="switchPortfolio(3)">
+                            <h4 class="portfolio-name">Medica Clinic</h4>
+                            <p class="portfolio-niche">Медицинский центр с онлайн-записью к врачам</p>
+                            <div class="portfolio-meta">
+                                <span class="badge badge-outline">Срок: 7 дней</span>
+                                <span class="portfolio-result">Интеграция WhatsApp</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Case 4 -->
+                        <div class="portfolio-item card" onclick="switchPortfolio(4)">
+                            <h4 class="portfolio-name">SmartHome Almaty</h4>
+                            <p class="portfolio-niche">Лендинг с квизом для систем умного дома</p>
+                            <div class="portfolio-meta">
+                                <span class="badge badge-outline">Срок: 4 дня</span>
+                                <span class="portfolio-result">Конверсия 8.4%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Правая колонка с макетом ноутбука -->
+                    <div class="portfolio-preview">
+                        <div class="laptop-mockup-interactive">
+                            <div class="laptop-screen-frame">
+                                <div class="laptop-viewport" id="portfolio-viewport">
+                                    <!-- Here goes the long scrollable image of the selected project -->
+                                    <div class="portfolio-scroll-content bg-gradient" id="portfolio-image-1">
+                                        <!-- Placeholder UI representing a long site -->
+                                        <div style="height:400px;background:#0F172A;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;">Aura Jewelry - Hero</div>
+                                        <div style="height:600px;background:#F8FAFC;display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:40px;">
+                                            <div style="background:#fff;border-radius:10px;"></div><div style="background:#fff;border-radius:10px;"></div>
+                                            <div style="background:#fff;border-radius:10px;"></div><div style="background:#fff;border-radius:10px;"></div>
+                                        </div>
+                                        <div style="height:300px;background:#1E40AF;color:#fff;display:flex;align-items:center;justify-content:center;">Footer</div>
+                                    </div>
+                                    
+                                    <div class="portfolio-scroll-content bg-gradient" id="portfolio-image-2" style="display: none;">
+                                        <div style="height:350px;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;">StroyTrans Logistic</div>
+                                        <div style="height:800px;background:#F1F5F9;padding:40px;"><div style="background:#fff;height:100%;border-radius:10px;"></div></div>
+                                    </div>
+                                    
+                                    <div class="portfolio-scroll-content bg-gradient" id="portfolio-image-3" style="display: none;">
+                                        <div style="height:500px;background:#EFF6FF;color:#2563EB;display:flex;align-items:center;justify-content:center;font-size:24px;">Medica Clinic</div>
+                                        <div style="height:500px;background:#FFFFFF;"></div>
+                                    </div>
+
+                                    <div class="portfolio-scroll-content bg-gradient" id="portfolio-image-4" style="display: none;">
+                                        <div style="height:300px;background:#F59E0B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;">SmartHome Almaty</div>
+                                        <div style="height:900px;background:#0F172A;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="laptop-base-frame"></div>
+                        </div>
+                        <div class="portfolio-hint">Прокрутите мышкой внутри экрана</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 8: КВИЗ-КАЛЬКУЛЯТОР -->
+        <section class="section section-dark" id="calculator">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Рассчитайте стоимость вашего проекта за 1 минуту</h2>
+                    <p class="section-subtitle">Ответьте на 3 вопроса и зафиксируйте скидку 5% на разработку.</p>
+                </div>
+                
+                <div class="quiz-container card">
+                    <div class="quiz-progress">
+                        <div class="progress-bar"><div class="progress-fill" id="quiz-progress-fill" style="width: 33.3%;"></div></div>
+                        <div class="progress-text">Шаг <span id="quiz-current-step">1</span> из 3</div>
+                    </div>
+                    
+                    <form id="quiz-form" onsubmit="event.preventDefault(); submitQuiz();">
+                        <!-- Step 1 -->
+                        <div class="quiz-step active" id="quiz-step-1">
+                            <h3 class="quiz-question">Какой тип сайта вам нужен?</h3>
+                            <div class="quiz-options-grid">
+                                <label class="quiz-option">
+                                    <input type="radio" name="siteType" value="landing" required checked>
+                                    <span class="option-card">
+                                        <span class="option-title">Лендинг пейдж</span>
+                                        <span class="option-desc">Одностраничный сайт для продаж</span>
+                                    </span>
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="siteType" value="catalog">
+                                    <span class="option-card">
+                                        <span class="option-title">Сайт-каталог</span>
+                                        <span class="option-desc">Сайт с карточками услуг/товаров</span>
+                                    </span>
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="siteType" value="corporate">
+                                    <span class="option-card">
+                                        <span class="option-title">Корпоративный</span>
+                                        <span class="option-desc">Многостраничный сайт компании</span>
+                                    </span>
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="siteType" value="shop">
+                                    <span class="option-card">
+                                        <span class="option-title">Интернет-магазин</span>
+                                        <span class="option-desc">С онлайн-оплатой и корзиной</span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="quiz-footer">
+                                <div></div>
+                                <button type="button" class="btn btn-primary" onclick="nextQuizStep(2)">Далее &rarr;</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="quiz-step" id="quiz-step-2">
+                            <h3 class="quiz-question">Есть ли у вас готовый дизайн или примеры, которые нравятся?</h3>
+                            <div class="quiz-options-grid">
+                                <label class="quiz-option">
+                                    <input type="radio" name="designStatus" value="have_examples" required>
+                                    <span class="option-card">
+                                        <span class="option-title">Есть примеры</span>
+                                        <span class="option-desc">Знаю, что хочу, есть ссылки на конкурентов</span>
+                                    </span>
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="designStatus" value="need_design">
+                                    <span class="option-card">
+                                        <span class="option-title">Нужен дизайн с нуля</span>
+                                        <span class="option-desc">Полагаюсь на ваш вкус и экспертизу</span>
+                                    </span>
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="designStatus" value="have_figma">
+                                    <span class="option-card">
+                                        <span class="option-title">Есть готовый макет</span>
+                                        <span class="option-desc">Нужна только верстка и программирование</span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="quiz-footer">
+                                <button type="button" class="btn btn-secondary" onclick="prevQuizStep(1)">&larr; Назад</button>
+                                <button type="button" class="btn btn-primary" onclick="nextQuizStep(3)">Далее &rarr;</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3 (Final) -->
+                        <div class="quiz-step" id="quiz-step-3">
+                            <h3 class="quiz-question">Оставьте контакты, чтобы мы выслали расчет и закрепили скидку 5%</h3>
+                            <div class="quiz-final-form">
+                                <div class="input-group">
+                                    <label class="input-label">Номер телефона (WhatsApp)</label>
+                                    <input type="tel" class="input-field phone-mask" id="quiz-phone" placeholder="+7 (___) ___-__-__" required>
+                                </div>
+                                <div class="quiz-bonus">
+                                    <span class="icon">🎁</span> Ваша скидка 5% уже зафиксирована
+                                </div>
+                            </div>
+                            <div class="quiz-footer">
+                                <button type="button" class="btn btn-secondary" onclick="prevQuizStep(2)">&larr; Назад</button>
+                                <button type="submit" class="btn btn-primary">Получить расчет &rarr;</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Success Message -->
+                        <div class="quiz-step" id="quiz-step-success">
+                            <div class="quiz-success-msg">
+                                <div class="success-icon">✓</div>
+                                <h3>Расчет отправлен!</h3>
+                                <p>Наш менеджер свяжется с вами в WhatsApp в течение 10 минут с детальной сметой и скидкой.</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 9: ПОЧЕМУ МЫ -->
+        <section class="section section-surface" id="reasons">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">6 причин выбрать студию NEXUS</h2>
+                    <p class="section-subtitle">Работаем не на поток, а на результат для вашего бизнеса.</p>
+                </div>
+                
+                <div class="reasons-grid">
+                    <div class="reason-card">
+                        <div class="reason-num text-numeric">01</div>
+                        <h4 class="reason-title">Официальный договор РК</h4>
+                        <p class="reason-desc">Работаем в белую. Фиксируем сроки, сумму и штрафы за просрочку в договоре. Выдаем АВР и ЭСФ.</p>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-num text-numeric">02</div>
+                        <h4 class="reason-title">Пожизненная гарантия на код</h4>
+                        <p class="reason-desc">Бесплатно исправим любую техническую ошибку, если она возникнет по нашей вине после сдачи проекта.</p>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-num text-numeric">03</div>
+                        <h4 class="reason-title">AI-оптимизация контента</h4>
+                        <p class="reason-desc">Используем нейросети для написания продающих текстов и генерации уникальной графики для вашей ниши.</p>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-num text-numeric">04</div>
+                        <h4 class="reason-title">Никаких шаблонов</h4>
+                        <p class="reason-desc">Отрисовываем каждый элемент интерфейса с нуля (в Figma), чтобы ваш сайт выделялся среди конкурентов.</p>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-num text-numeric">05</div>
+                        <h4 class="reason-title">Всегда на связи</h4>
+                        <p class="reason-desc">Создаем общий чат в WhatsApp/Telegram с дизайнером и разработчиком. Вы видите процесс работы каждый день.</p>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-num text-numeric">06</div>
+                        <h4 class="reason-title">Высокая скорость работы</h4>
+                        <p class="reason-desc">Пишем чистый Vanilla CSS и JS. Наши сайты грузятся за 0.8 секунд, что повышает конверсию в заявку.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 10: ЭТАПЫ РАБОТЫ (TIMELINE) -->
+        <section class="section section-light" id="workflow">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Прозрачный процесс работы от идеи до запуска</h2>
+                    <p class="section-subtitle">Пройдем путь от знакомства до первых заявок с вашего сайта.</p>
+                </div>
+                
+                <div class="timeline">
+                    <!-- Step 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content card">
+                            <span class="timeline-badge badge-outline">День 1</span>
+                            <h4 class="timeline-title">Брифинг и бесплатный концепт</h4>
+                            <p class="timeline-desc">Собираем информацию о бизнесе. Через 24 часа показываем интерактивный макет первого экрана.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content card">
+                            <span class="timeline-badge badge-outline">День 2</span>
+                            <h4 class="timeline-title">Договор и оплата 50%</h4>
+                            <p class="timeline-desc">Если концепт понравился, подписываем официальный договор и вы вносите первую часть оплаты.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content card">
+                            <span class="timeline-badge badge-outline">День 3-7</span>
+                            <h4 class="timeline-title">Дизайн и программирование</h4>
+                            <p class="timeline-desc">Отрисовываем остальные блоки, пишем тексты, верстаем и сажаем на систему управления.</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content card">
+                            <span class="timeline-badge badge-outline">День 8</span>
+                            <h4 class="timeline-title">Утверждение и правки</h4>
+                            <p class="timeline-desc">Показываем готовый рабочий сайт. Вносим корректировки до идеального результата без доплат.</p>
+                        </div>
+                    </div>
+                    <!-- Step 5 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content card">
+                            <span class="timeline-badge badge-outline">День 9</span>
+                            <h4 class="timeline-title">Запуск, обучение и остаток 50%</h4>
+                            <p class="timeline-desc">Привязываем домен, настраиваем формы заявок. Обучаем вас работе с сайтом и получаем остаток.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 11: FAQ -->
+        <section class="section section-surface" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Часто задаваемые вопросы</h2>
+                    <p class="section-subtitle">Отвечаем на главные страхи и сомнения клиентов.</p>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                            А что если мне не понравится дизайн?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Именно поэтому мы делаем <strong>бесплатный концепт первого экрана до предоплаты</strong>. Мы начинаем работать по договору только если вам понравилась предложенная концепция. В процессе работы мы также согласовываем каждый этап.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                            Смогу ли я сам менять тексты и картинки?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Да, мы подключаем удобную панель управления (CMS). Вы сможете в несколько кликов изменять текст, добавлять фото, менять цены, как в обычной соцсети. После сдачи мы запишем для вас обучающее видео.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                            Есть ли абонентская плата за сайт?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Нет, мы не берем ежемесячных платежей. Вы платите один раз за разработку. Далее вам нужно будет только продлевать домен и хостинг раз в год (около 15 000 тг/год). Первый год домен и хостинг мы дарим бесплатно.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                            Вы настраиваете рекламу (таргет, контекст)?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Мы специализируемся исключительно на высококонверсионной разработке сайтов. Но мы можем порекомендовать проверенных партнеров по маркетингу, которые настроят поток клиентов на ваш новый мощный сайт.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                            Вы работаете только с Алматы и Астаной?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Мы работаем по всему Казахстану и миру. Документооборот ведется электронно (через ЭДО, Учет.kz или почту). Общение — в Zoom/Google Meet и мессенджерах. Это быстро и эффективно.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК 12: ФИНАЛЬНЫЙ CTA И КОНТАКТЫ -->
+        <section class="section section-light" id="contacts">
+            <div class="container">
+                <div class="cta-container">
+                    <div class="cta-content">
+                        <h2 class="section-title">Готовы обсудить ваш проект?</h2>
+                        <p class="section-subtitle">Оставьте заявку, и мы свяжемся с вами в течение 10 минут. Расскажем, как мы можем помочь вашему бизнесу расти.</p>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <span class="contact-label">Телефон / WhatsApp:</span>
+                                <a href="tel:+77770000000" class="contact-link text-numeric">+7 (777) 000-00-00</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-label">Email:</span>
+                                <a href="mailto:hello@nexus-studio.kz" class="contact-link">hello@nexus-studio.kz</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-label">Режим работы:</span>
+                                <span class="contact-text">Пн-Пт: 10:00 - 19:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-form-wrapper card">
+                        <h3 class="form-title">Оставить заявку</h3>
+                        <form id="cta-form" onsubmit="event.preventDefault(); submitCtaForm();">
+                            <div class="input-group">
+                                <label class="input-label">Ваше имя</label>
+                                <input type="text" class="input-field" placeholder="Иван Иванов" required>
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Номер телефона</label>
+                                <input type="tel" class="input-field phone-mask" placeholder="+7 (___) ___-__-__" required>
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Опишите задачу (необязательно)</label>
+                                <textarea class="input-field textarea-field" placeholder="Например: нужен интернет-магазин автозапчастей"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-full">Отправить заявку &rarr;</button>
+                            <div class="form-note text-center">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности.</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- БЛОК 13: ФУТЕР -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="header-logo">
+                        <a href="/" class="logo-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon">
+                                <rect x="2" y="2" width="20" height="20" rx="4" fill="var(--color-primary)"/>
+                                <path d="M7 16L12 8L17 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <div class="logo-text">
+                                <span class="logo-title" style="color: #fff;">NEXUS</span>
+                                <span class="logo-subtitle" style="color: var(--color-text-subtle);">Студия веб-разработки</span>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="footer-desc">Создаем умные сайты с AI-интеграцией для бизнеса в Казахстане и СНГ. Официально, по договору, без скрытых платежей.</p>
+                </div>
+                
+                <div class="footer-nav">
+                    <h4 class="footer-title">Навигация</h4>
+                    <ul>
+                        <li><a href="#pricing">Тарифы</a></li>
+                        <li><a href="#portfolio">Портфолио</a></li>
+                        <li><a href="#workflow">Этапы работы</a></li>
+                        <li><a href="#faq">Вопросы и ответы</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h4 class="footer-title">Услуги</h4>
+                    <ul>
+                        <li><a href="#">Разработка Landing Page</a></li>
+                        <li><a href="#">Создание интернет-магазинов</a></li>
+                        <li><a href="#">Корпоративные сайты</a></li>
+                        <li><a href="#">Сайты-визитки</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-seo-cloud">
+                <h4 class="footer-title">Работаем по всему Казахстану:</h4>
+                <p>Создание сайтов Алматы • Разработка сайтов Астана • Веб-студия Шымкент • Заказать сайт Караганда • Интернет-магазин Актобе • Лендинг Тараз • Сайты Павлодар • Веб-разработка Усть-Каменогорск • Сайты Семей • Создание сайтов Атырау • Разработка сайтов Костанай • Веб-студия Кызылорда • Сайты Уральск • Заказать сайт Петропавловск • Сайты Актау • Разработка сайтов Кокшетау • Веб-студия Туркестан</p>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year"></span> NEXUS Web Studio. Все права защищены.</div>
+                <div class="footer-legal">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Договор оферты</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- БЛОК 14.1: FLOATING WHATSAPP -->
+    <a href="https://wa.me/77770000000?text=Здравствуйте!%20Я%20по%20поводу%20создания%20сайта." target="_blank" class="floating-whatsapp" aria-label="Написать в WhatsApp">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        <span class="whatsapp-tooltip">Ответим за 10 минут</span>
+    </a>
+
+    <!-- БЛОК 14.2: EXIT-INTENT POPUP -->
+    <div class="modal" id="exitModal" aria-hidden="true">
+        <div class="modal-overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="exitModal-title">
+                <button class="modal-close" aria-label="Закрыть окно" data-micromodal-close></button>
+                <div class="modal-content-wrapper">
+                    <div class="modal-image">
+                        <div class="discount-badge">-10%</div>
+                    </div>
+                    <div class="modal-form-area">
+                        <h2 class="modal-title" id="exitModal-title">Уже уходите?</h2>
+                        <p class="modal-desc">Зафиксируйте скидку 10% на разработку любого сайта за вашим номером телефона. Скидка действует 7 дней.</p>
+                        
+                        <form id="exit-form" onsubmit="event.preventDefault(); submitExitForm();">
+                            <div class="input-group">
+                                <input type="tel" class="input-field phone-mask" placeholder="+7 (___) ___-__-__" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-full">Забрать скидку 10%</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GENERAL CONTACT MODAL -->
+    <div class="modal" id="contactModal" aria-hidden="true">
+        <div class="modal-overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal-container" role="dialog" aria-modal="true">
+                <button class="modal-close" aria-label="Закрыть окно" data-micromodal-close></button>
+                <h2 class="modal-title text-center">Обсудить проект</h2>
+                <p class="modal-desc text-center">Оставьте номер, мы перезвоним в течение 10 минут.</p>
+                <form onsubmit="event.preventDefault(); submitModalForm();">
+                    <div class="input-group">
+                        <input type="tel" class="input-field phone-mask" placeholder="+7 (___) ___-__-__" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full">Жду звонка</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+</body>
+</html>

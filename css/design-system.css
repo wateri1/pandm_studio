@@ -1,0 +1,219 @@
+/* ==========================================================================
+   DESIGN SYSTEM: Swiss Precision & Electric Blue (Official Theme)
+   ========================================================================== */
+
+:root {
+  /* --- 1. Backgrounds & Surfaces --- */
+  --color-bg-base: #FFFFFF;
+  --color-bg-surface: #F8FAFC;
+  --color-bg-card: #FFFFFF;
+  --color-bg-muted: #F1F5F9;
+
+  /* --- 2. Borders & Outlines --- */
+  --color-border-subtle: #E2E8F0;
+  --color-border-hover: #CBD5E1;
+  --color-border-active: #2563EB;
+
+  /* --- 3. Primary Accent (Electric Royal Blue) --- */
+  --color-primary: #2563EB;
+  --color-primary-hover: #1D4ED8;
+  --color-primary-active: #1E40AF;
+  --color-primary-light: #EFF6FF;
+  --color-primary-border: #BFDBFE;
+  --color-primary-glow: rgba(37, 99, 235, 0.28);
+
+  /* --- 4. Trust & Status Colors --- */
+  --color-trust-green: #059669;
+  --color-trust-hover: #047857;
+  --color-trust-light: #ECFDF5;
+  --color-trust-border: #A7F3D0;
+  --color-whatsapp: #25D366;
+  --color-star-gold: #F59E0B;
+
+  /* --- 5. Typography Colors --- */
+  --color-text-main: #0F172A;
+  --color-text-body: #334155;
+  --color-text-muted: #64748B;
+  --color-text-subtle: #94A3B8;
+  --color-text-inverse: #FFFFFF;
+
+  /* --- 6. Font Families --- */
+  --font-display: 'Manrope', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-numeric: 'Space Grotesk', system-ui, sans-serif;
+
+  /* --- 7. Border Radius Scale --- */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-btn: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+
+  /* --- 8. Spacing Scale --- */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 80px;
+
+  /* --- 9. Natural Ambient Shadows --- */
+  --shadow-subtle: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.04);
+  --shadow-card: 0 4px 6px -1px rgba(15, 23, 42, 0.04), 0 2px 4px -2px rgba(15, 23, 42, 0.03);
+  --shadow-hover: 0 14px 28px -6px rgba(15, 23, 42, 0.08), 0 6px 12px -4px rgba(15, 23, 42, 0.04);
+  --shadow-modal: 0 25px 50px -12px rgba(15, 23, 42, 0.16);
+  --shadow-btn-primary: 0 4px 14px rgba(37, 99, 235, 0.28);
+  --shadow-btn-primary-hover: 0 8px 22px rgba(37, 99, 235, 0.4);
+
+  /* --- 10. Motion & Physics Transitions --- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.15s var(--ease-out);
+  --transition-normal: 0.25s var(--ease-out);
+  --transition-smooth: 0.4s var(--ease-out);
+}
+
+/* Base Body Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg-base);
+  color: var(--color-text-body);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Scale */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+  color: var(--color-text-main);
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(34px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: clamp(26px, 4vw, 38px);
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: clamp(19px, 3vw, 22px);
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+h4 {
+  font-size: clamp(16px, 2vw, 17px);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+}
+
+.text-numeric {
+  font-family: var(--font-numeric);
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14.5px;
+  padding: 14px 28px;
+  border-radius: var(--radius-btn);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  box-shadow: var(--shadow-btn-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  color: var(--color-text-inverse);
+  box-shadow: var(--shadow-btn-primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  background-color: var(--color-primary-active);
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  background-color: var(--color-bg-base);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-border);
+}
+
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Utilities */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
