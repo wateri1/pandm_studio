@@ -51,8 +51,8 @@
                         <path d="M7 16L12 8L17 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                     <div class="logo-text">
-                        <span class="logo-title">NEXUS</span>
-                        <span class="logo-subtitle">Студия веб-разработки</span>
+                        <span class="logo-title">P&M Studio</span>
+                        <span class="logo-subtitle">Оптимизация сайтов</span>
                     </div>
                 </a>
             </div>
@@ -85,16 +85,17 @@
         <section class="section hero-section" id="hero">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <div class="badge badge-accent hero-badge">🚀 Разработка сайтов под ключ в Казахстане • Запуск от 5 дней</div>
-                    <h1 class="hero-title">Создаем умные сайты с AI-интеграцией, которые окупаются с первого месяца</h1>
-                    <p class="hero-subtitle">Индивидуальный трендовый дизайн без чужих шаблонов. Бесплатный прототип первого экрана до предоплаты. Пожизненная гарантия на код по договору.</p>
+                    <div class="badge badge-accent hero-badge hide-on-mobile">🚀 Разработка сайтов под ключ в Казахстане • Запуск от 5 дней</div>
+                    <h1 class="hero-title">Делаем передовые технологии рабочим инструментом вашего бизнеса</h1>
+                    <p class="hero-subtitle">Мы забираем на себя и алгоритмы всю рутину и потерю лидов. Переводим компании от хаотичных процессов к умной цифровой экосистеме, где каждая строка кода приносит прибыль.</p>
                     
                     <form class="hero-form" onsubmit="event.preventDefault(); submitHeroForm();">
                         <div class="form-inline">
-                            <input type="tel" class="input-field phone-mask" placeholder="Ваш номер телефона (+7 ...)" required>
-                            <button type="submit" class="btn btn-primary">Получить концепт бесплатно &rarr;</button>
+                            <input type="text" id="hero-name" class="input-field" placeholder="Ваше имя" required>
+                            <input type="text" id="hero-task" class="input-field" placeholder="Кратко о задаче (опционально)">
+                            <button type="submit" class="btn btn-primary">В WhatsApp &rarr;</button>
                         </div>
-                        <div class="form-note">🔒 Ответим в WhatsApp в течение 10 минут. Никакого спама.</div>
+                        <div class="form-note">🔒 Бесплатный прототип первого экрана до предоплаты.</div>
                     </form>
 
                     <ul class="hero-trust-list">
@@ -129,14 +130,12 @@
                         </div>
                         <div class="laptop-base"></div>
                         
-                        <!-- Floating metrics -->
-                        <div class="floating-badge badge-speed">
-                            <div class="circle pulse-green">99</div>
-                            <span>Google PageSpeed</span>
-                        </div>
-                        <div class="floating-badge badge-kaspi">
-                            <span class="badge-red">Kaspi</span>
-                            <span>Интеграция 0-0-12</span>
+                        <!-- Static metrics -->
+                        <div class="static-metrics-container">
+                            <div class="static-badge badge-speed">
+                                <div class="circle pulse-green">99</div>
+                                <span>Google PageSpeed</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -157,8 +156,6 @@
                     <span class="ticker-separator">✦</span>
                     <span class="ticker-item">БЫСТРЫЙ ЗАПУСК ОТ 5 ДНЕЙ</span>
                     <span class="ticker-separator">✦</span>
-                    <span class="ticker-item">ПОДКЛЮЧЕНИЕ KASPI / HALYK</span>
-                    <span class="ticker-separator">✦</span>
                     <span class="ticker-item">ДОГОВОР И ГАРАНТИЯ</span>
                     <span class="ticker-separator">✦</span>
                     <span class="ticker-item">БЕЗ АБОНПЛАТЫ ЗА ПОДДЕРЖКУ</span>
@@ -175,8 +172,6 @@
                     <span class="ticker-item">АДАПТИВНОСТЬ 100%</span>
                     <span class="ticker-separator">✦</span>
                     <span class="ticker-item">БЫСТРЫЙ ЗАПУСК ОТ 5 ДНЕЙ</span>
-                    <span class="ticker-separator">✦</span>
-                    <span class="ticker-item">ПОДКЛЮЧЕНИЕ KASPI / HALYK</span>
                     <span class="ticker-separator">✦</span>
                     <span class="ticker-item">ДОГОВОР И ГАРАНТИЯ</span>
                     <span class="ticker-separator">✦</span>
@@ -240,7 +235,7 @@
                         <h3 class="pricing-name">Лендинг пейдж</h3>
                         <div class="pricing-price text-numeric">от 95 000 ₸</div>
                         <div class="pricing-time">Срок: 3–5 рабочих дней</div>
-                        <p class="pricing-desc">Для быстрого запуска рекламы, тестирования новой ниши, моно-товара или услуги.</p>
+                        <p class="pricing-desc">Быстрый старт: тест ниши, запуск рекламы или продажа моно-товара.</p>
                         <ul class="pricing-features">
                             <li><span class="icon check">✓</span> До 7 блоков</li>
                             <li><span class="icon check">✓</span> Продающий копирайтинг</li>
@@ -252,11 +247,11 @@
                     
                     <!-- Тариф 2 (Хит продаж) -->
                     <div class="pricing-card card pricing-popular">
-                        <div class="popular-badge">ХИТ ПРОДАЖ • 72% ВЫБИРАЮТ ЭТОТ ТАРИФ</div>
+                        <div class="popular-badge">ХИТ ПРОДАЖ</div>
                         <h3 class="pricing-name">Сайт-визитка / Каталог</h3>
                         <div class="pricing-price text-numeric">от 160 000 ₸</div>
                         <div class="pricing-time">Срок: 5–7 рабочих дней</div>
-                        <p class="pricing-desc">Для полноценного присутствия компании в сети с каталогом услуг или продукции.</p>
+                        <p class="pricing-desc">Полноценное представительство: каталог услуг или витрина продукции.</p>
                         <ul class="pricing-features">
                             <li><span class="icon check">✓</span> До 15 блоков / 5 страниц</li>
                             <li><span class="icon check">✓</span> Удобная админ-панель</li>
@@ -271,7 +266,7 @@
                         <h3 class="pricing-name">Корпоративный сайт</h3>
                         <div class="pricing-price text-numeric">от 260 000 ₸</div>
                         <div class="pricing-time">Срок: 7–12 рабочих дней</div>
-                        <p class="pricing-desc">Для B2B-сектора, производственных компаний, дистрибьюторов и сервисов.</p>
+                        <p class="pricing-desc">Масштабный проект: для B2B-сектора, производств и дистрибьюторов.</p>
                         <ul class="pricing-features">
                             <li><span class="icon check">✓</span> Разветвленная структура</li>
                             <li><span class="icon check">✓</span> Блог / Новости</li>
@@ -286,7 +281,7 @@
                         <h3 class="pricing-name">Интернет-магазин</h3>
                         <div class="pricing-price text-numeric">от 360 000 ₸</div>
                         <div class="pricing-time">Срок: 12–18 рабочих дней</div>
-                        <p class="pricing-desc">Для полноценных онлайн-продаж физических товаров по всему Казахстану.</p>
+                        <p class="pricing-desc">Мощный инструмент: онлайн-продажи и автоматизация по всему РК.</p>
                         <ul class="pricing-features">
                             <li><span class="icon check">✓</span> Умные фильтры и поиск</li>
                             <li><span class="icon check">✓</span> Личный кабинет</li>
@@ -307,36 +302,36 @@
                     <p class="section-subtitle">Мы сдаем готовый инструмент, который работает сразу после сдачи — без дополнительных расходов.</p>
                 </div>
                 
-                <div class="features-grid">
-                    <div class="feature-card card">
-                        <div class="feature-icon-wrapper">🌐</div>
-                        <h4 class="feature-title">Домен и хостинг на 1 год бесплатно</h4>
-                        <p class="feature-desc">Регистрируем надежный скоростной хостинг и красивый домен в зоне .kz абсолютно бесплатно.</p>
+                <div class="features-table-grid card">
+                    <div class="feature-table-row">
+                        <div class="feature-table-cell">
+                            <span class="feature-icon">🌐</span>
+                            <span class="feature-text">Домен и хостинг на 1 год</span>
+                        </div>
+                        <div class="feature-table-cell">
+                            <span class="feature-icon">🔒</span>
+                            <span class="feature-text">SSL-сертификат (https)</span>
+                        </div>
                     </div>
-                    <div class="feature-card card">
-                        <div class="feature-icon-wrapper">🔒</div>
-                        <h4 class="feature-title">SSL-сертификат безопасности</h4>
-                        <p class="feature-desc">Защищенный протокол https, который вызывает доверие браузеров (зеленый замочек) и платежных систем.</p>
+                    <div class="feature-table-row">
+                        <div class="feature-table-cell">
+                            <span class="feature-icon">📱</span>
+                            <span class="feature-text">Мобильная адаптация</span>
+                        </div>
+                        <div class="feature-table-cell">
+                            <span class="feature-icon">📈</span>
+                            <span class="feature-text">Базовая SEO-оптимизация</span>
+                        </div>
                     </div>
-                    <div class="feature-card card">
-                        <div class="feature-icon-wrapper">📱</div>
-                        <h4 class="feature-title">Идеальная мобильная адаптация</h4>
-                        <p class="feature-desc">Сайт превосходно открывается и быстро работает на всех смартфонах, планшетах и 4K-мониторах.</p>
-                    </div>
-                    <div class="feature-card card">
-                        <div class="feature-icon-wrapper">📈</div>
-                        <h4 class="feature-title">Базовая SEO-оптимизация</h4>
-                        <p class="feature-desc">Чистые мета-теги Title, Description, разметка OpenGraph для соцсетей и карта сайта sitemap.xml.</p>
-                    </div>
-                    <div class="feature-card card">
-                        <div class="feature-icon-wrapper">⚙️</div>
-                        <h4 class="feature-title">Простая админ-панель</h4>
-                        <p class="feature-desc">Легкое управление текстами, ценами и фотографиями без привлечения программиста.</p>
-                    </div>
-                    <div class="feature-card card">
-                        <div class="feature-icon-wrapper">🎓</div>
-                        <h4 class="feature-title">Обучение и видеоинструкция</h4>
-                        <p class="feature-desc">Персонально покажем, как работать с сайтом, и запишем короткие видеоуроки для вашей команды.</p>
+                    <div class="feature-table-row">
+                        <div class="feature-table-cell">
+                            <span class="feature-icon">⚙️</span>
+                            <span class="feature-text">Удобная админ-панель</span>
+                        </div>
+                        <div class="feature-table-cell">
+                            <span class="feature-icon">🎓</span>
+                            <span class="feature-text">Обучение по управлению сайтом</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -350,86 +345,35 @@
                     <p class="section-subtitle">Посмотрите интерактивные макеты реальных проектов прямо здесь — без перехода на внешние сайты.</p>
                 </div>
                 
-                <div class="portfolio-container">
-                    <!-- Левая колонка со списком кейсов -->
-                    <div class="portfolio-list">
-                        <!-- Case 1 (Active) -->
-                        <div class="portfolio-item card active" onclick="switchPortfolio(1)">
+                <div class="portfolio-simple-grid">
+                    <a href="https://wa.me/77770000000?text=Хочу%20узнать%20подробнее%20про%20Aura%20Jewelry" target="_blank" class="portfolio-grid-item card">
+                        <div class="portfolio-grid-image" style="background: #0F172A; color: white;">Aura Jewelry</div>
+                        <div class="portfolio-grid-info">
                             <h4 class="portfolio-name">Aura Jewelry</h4>
                             <p class="portfolio-niche">Премиальный интернет-магазин ювелирных изделий</p>
-                            <div class="portfolio-meta">
-                                <span class="badge badge-outline">Срок: 12 дней</span>
-                                <span class="portfolio-result">Рост заявок в 3 раза</span>
-                            </div>
                         </div>
-                        
-                        <!-- Case 2 -->
-                        <div class="portfolio-item card" onclick="switchPortfolio(2)">
+                    </a>
+                    <a href="https://wa.me/77770000000?text=Хочу%20узнать%20подробнее%20про%20StroyTrans%20Logistic" target="_blank" class="portfolio-grid-item card">
+                        <div class="portfolio-grid-image" style="background: #059669; color: white;">StroyTrans Logistic</div>
+                        <div class="portfolio-grid-info">
                             <h4 class="portfolio-name">StroyTrans Logistic</h4>
                             <p class="portfolio-niche">Корпоративный сайт грузоперевозок по Казахстану и СНГ</p>
-                            <div class="portfolio-meta">
-                                <span class="badge badge-outline">Срок: 8 дней</span>
-                                <span class="portfolio-result">3 языковые версии</span>
-                            </div>
                         </div>
-                        
-                        <!-- Case 3 -->
-                        <div class="portfolio-item card" onclick="switchPortfolio(3)">
+                    </a>
+                    <a href="https://wa.me/77770000000?text=Хочу%20узнать%20подробнее%20про%20Medica%20Clinic" target="_blank" class="portfolio-grid-item card">
+                        <div class="portfolio-grid-image" style="background: #EFF6FF; color: #2563EB;">Medica Clinic</div>
+                        <div class="portfolio-grid-info">
                             <h4 class="portfolio-name">Medica Clinic</h4>
                             <p class="portfolio-niche">Медицинский центр с онлайн-записью к врачам</p>
-                            <div class="portfolio-meta">
-                                <span class="badge badge-outline">Срок: 7 дней</span>
-                                <span class="portfolio-result">Интеграция WhatsApp</span>
-                            </div>
                         </div>
-                        
-                        <!-- Case 4 -->
-                        <div class="portfolio-item card" onclick="switchPortfolio(4)">
+                    </a>
+                    <a href="https://wa.me/77770000000?text=Хочу%20узнать%20подробнее%20про%20SmartHome%20Almaty" target="_blank" class="portfolio-grid-item card">
+                        <div class="portfolio-grid-image" style="background: #F59E0B; color: white;">SmartHome Almaty</div>
+                        <div class="portfolio-grid-info">
                             <h4 class="portfolio-name">SmartHome Almaty</h4>
                             <p class="portfolio-niche">Лендинг с квизом для систем умного дома</p>
-                            <div class="portfolio-meta">
-                                <span class="badge badge-outline">Срок: 4 дня</span>
-                                <span class="portfolio-result">Конверсия 8.4%</span>
-                            </div>
                         </div>
-                    </div>
-                    
-                    <!-- Правая колонка с макетом ноутбука -->
-                    <div class="portfolio-preview">
-                        <div class="laptop-mockup-interactive">
-                            <div class="laptop-screen-frame">
-                                <div class="laptop-viewport" id="portfolio-viewport">
-                                    <!-- Here goes the long scrollable image of the selected project -->
-                                    <div class="portfolio-scroll-content bg-gradient" id="portfolio-image-1">
-                                        <!-- Placeholder UI representing a long site -->
-                                        <div style="height:400px;background:#0F172A;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;">Aura Jewelry - Hero</div>
-                                        <div style="height:600px;background:#F8FAFC;display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:40px;">
-                                            <div style="background:#fff;border-radius:10px;"></div><div style="background:#fff;border-radius:10px;"></div>
-                                            <div style="background:#fff;border-radius:10px;"></div><div style="background:#fff;border-radius:10px;"></div>
-                                        </div>
-                                        <div style="height:300px;background:#1E40AF;color:#fff;display:flex;align-items:center;justify-content:center;">Footer</div>
-                                    </div>
-                                    
-                                    <div class="portfolio-scroll-content bg-gradient" id="portfolio-image-2" style="display: none;">
-                                        <div style="height:350px;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;">StroyTrans Logistic</div>
-                                        <div style="height:800px;background:#F1F5F9;padding:40px;"><div style="background:#fff;height:100%;border-radius:10px;"></div></div>
-                                    </div>
-                                    
-                                    <div class="portfolio-scroll-content bg-gradient" id="portfolio-image-3" style="display: none;">
-                                        <div style="height:500px;background:#EFF6FF;color:#2563EB;display:flex;align-items:center;justify-content:center;font-size:24px;">Medica Clinic</div>
-                                        <div style="height:500px;background:#FFFFFF;"></div>
-                                    </div>
-
-                                    <div class="portfolio-scroll-content bg-gradient" id="portfolio-image-4" style="display: none;">
-                                        <div style="height:300px;background:#F59E0B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;">SmartHome Almaty</div>
-                                        <div style="height:900px;background:#0F172A;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="laptop-base-frame"></div>
-                        </div>
-                        <div class="portfolio-hint">Прокрутите мышкой внутри экрана</div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -784,8 +728,8 @@
                                 <path d="M7 16L12 8L17 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             <div class="logo-text">
-                                <span class="logo-title" style="color: #fff;">NEXUS</span>
-                                <span class="logo-subtitle" style="color: var(--color-text-subtle);">Студия веб-разработки</span>
+                                <span class="logo-title" style="color: #fff;">P&M Studio</span>
+                                <span class="logo-subtitle" style="color: var(--color-text-subtle);">Оптимизация сайтов</span>
                             </div>
                         </a>
                     </div>
@@ -819,7 +763,7 @@
             </div>
             
             <div class="footer-bottom">
-                <div class="copyright">&copy; <span id="current-year"></span> NEXUS Web Studio. Все права защищены.</div>
+                <div class="copyright">&copy; <span id="current-year"></span> P&M Studio. Все права защищены.</div>
                 <div class="footer-legal">
                     <a href="#">Политика конфиденциальности</a>
                     <a href="#">Договор оферты</a>
@@ -865,12 +809,15 @@
             <div class="modal-container" role="dialog" aria-modal="true">
                 <button class="modal-close" aria-label="Закрыть окно" data-micromodal-close></button>
                 <h2 class="modal-title text-center">Обсудить проект</h2>
-                <p class="modal-desc text-center">Оставьте номер, мы перезвоним в течение 10 минут.</p>
-                <form onsubmit="event.preventDefault(); submitModalForm();">
+                <p class="modal-desc text-center">Оставьте контакты, и мы напишем вам в WhatsApp.</p>
+                <form id="contactForm" onsubmit="event.preventDefault(); submitModalForm();">
                     <div class="input-group">
-                        <input type="tel" class="input-field phone-mask" placeholder="+7 (___) ___-__-__" required>
+                        <input type="text" id="modal-name" class="input-field" placeholder="Ваше имя" required>
                     </div>
-                    <button type="submit" class="btn btn-primary w-full">Жду звонка</button>
+                    <div class="input-group">
+                        <input type="text" id="modal-task" class="input-field" placeholder="Кратко о задаче (опционально)">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full">В WhatsApp</button>
                 </form>
             </div>
         </div>

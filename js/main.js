@@ -124,26 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // --- 7. PORTFOLIO SWITCHER ---
-    window.switchPortfolio = function(id) {
-        // Update active class on list items
-        document.querySelectorAll('.portfolio-item').forEach(item => {
-            item.classList.remove('active');
-        });
-        const clickedItem = document.querySelector(`.portfolio-list .portfolio-item:nth-child(${id})`);
-        if (clickedItem) clickedItem.classList.add('active');
-
-        // Update image/content inside laptop
-        document.querySelectorAll('.portfolio-scroll-content').forEach(content => {
-            content.style.display = 'none';
-        });
-        const targetContent = document.getElementById(`portfolio-image-${id}`);
-        if (targetContent) {
-            targetContent.style.display = 'block';
-            // Scroll to top of the laptop viewport
-            document.getElementById('portfolio-viewport').scrollTop = 0;
-        }
-    };
+    // Портфолио теперь использует CSS Grid, JS-переключатель удален.
 
     // --- 8. QUIZ LOGIC ---
     let currentQuizStep = 1;
@@ -175,21 +156,37 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // --- 9. FORM SUBMISSIONS (Mock) ---
+    function sendToWhatsApp(nameId, taskId, prefix) {
+        const nameEl = document.getElementById(nameId);
+        const taskEl = document.getElementById(taskId);
+        const name = nameEl ? nameEl.value : 'Аноним';
+        const task = taskEl ? taskEl.value : '';
+        
+        let text = `${prefix}\nЗдравствуйте! Меня зовут ${name}.`;
+        if (task) {
+            text += `\nОписание задачи: ${task}`;
+        }
+        
+        const encodedText = encodeURIComponent(text);
+        window.open(`https://wa.me/77770000000?text=${encodedText}`, '_blank');
+    }
+
+    // --- 9. FORM SUBMISSIONS ---
     window.submitHeroForm = function() {
-        alert("Заявка с главного экрана принята! Мы свяжемся с вами.");
+        sendToWhatsApp('hero-name', 'hero-task', '🔥 Заявка с главного экрана');
     };
     window.submitConceptForm = function() {
-        alert("Заявка на бесплатный концепт принята! Дизайнер уже приступил.");
+        sendToWhatsApp('concept-name', 'concept-task', '🎨 Заявка на бесплатный концепт');
     };
     window.submitCtaForm = function() {
-        alert("Сообщение отправлено! Ждите звонка.");
+        sendToWhatsApp('cta-name', 'cta-task', '💬 Заявка из нижнего блока');
     };
     window.submitExitForm = function() {
-        alert("Скидка 10% зафиксирована! Менеджер свяжется с вами.");
+        sendToWhatsApp('exit-name', 'exit-task', '🎁 Заявка с Exit-PopUp (скидка 10%)');
         closeModal('exitModal');
     };
     window.submitModalForm = function() {
-        alert("Заявка отправлена!");
+        sendToWhatsApp('modal-name', 'modal-task', '📩 Быстрая заявка');
         closeModal('contactModal');
     };
 });
