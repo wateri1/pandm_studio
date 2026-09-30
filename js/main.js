@@ -1,5 +1,5 @@
 /**
- * NEXUS Web Studio - Main Interactive Logic
+ * P&M Studio - Main Interactive Logic
  * Vanilla JS, no jQuery.
  */
 
@@ -95,13 +95,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- 5. EXIT-INTENT POPUP ---
-    let exitIntentShown = localStorage.getItem('nexus_exit_intent_shown');
+    let exitIntentShown = localStorage.getItem('pandm_exit_intent_shown');
     
     if (!exitIntentShown) {
         document.addEventListener('mouseleave', function(e) {
             if (e.clientY < 10 && !document.getElementById('exitModal').classList.contains('is-open')) {
                 openModal('exitModal');
-                localStorage.setItem('nexus_exit_intent_shown', 'true');
+                localStorage.setItem('pandm_exit_intent_shown', 'true');
             }
         });
     }
@@ -124,35 +124,131 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Портфолио теперь использует CSS Grid, JS-переключатель удален.
+    // --- 7. PORTFOLIO CAROUSEL SYNC (MOBILE) ---
+    const portfolioGrid = document.querySelector('.portfolio-simple-grid');
+    const portfolioDots = document.querySelectorAll('.portfolio-dot');
+    
+    if (portfolioGrid && portfolioDots.length > 0) {
+        portfolioGrid.addEventListener('scroll', () => {
+            const scrollLeft = portfolioGrid.scrollLeft;
+            const itemWidth = portfolioGrid.firstElementChild ? (portfolioGrid.firstElementChild.offsetWidth + 16) : 1;
+            const activeIndex = Math.min(Math.round(scrollLeft / itemWidth), portfolioDots.length - 1);
+            
+            portfolioDots.forEach((dot, index) => {
+                if (index === activeIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }, { passive: true });
+
+        portfolioDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const index = parseInt(dot.getAttribute('data-index'), 10);
+                const items = portfolioGrid.querySelectorAll('.portfolio-grid-item');
+                if (items[index]) {
+                    items[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+            });
+        });
+    }
 
     // --- 8. QUIZ LOGIC ---
     let currentQuizStep = 1;
-    const totalQuizSteps = 3;
+    const totalQuizSteps = 4;
 
     window.nextQuizStep = function(step) {
         document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active'));
-        document.getElementById(`quiz-step-${step}`).classList.add('active');
-        updateQuizProgress(step);
+        const stepId = typeof step === 'string' ? `quiz-step-${step}` : `quiz-step-${step}`;
+        const targetEl = document.getElementById(stepId);
+        if (targetEl) targetEl.classList.add('active');
+        
+        let progressStep = step;
+        if (step === 'constructor') progressStep = 1.5;
+        if (step === 4) progressStep = 4;
+        
+        updateQuizProgress(progressStep);
     };
 
     window.prevQuizStep = function(step) {
         document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active'));
-        document.getElementById(`quiz-step-${step}`).classList.add('active');
-        updateQuizProgress(step);
+        const stepId = typeof step === 'string' ? `quiz-step-${step}` : `quiz-step-${step}`;
+        const targetEl = document.getElementById(stepId);
+        if (targetEl) targetEl.classList.add('active');
+        
+        let progressStep = step;
+        if (step === 'constructor') progressStep = 1.5;
+        updateQuizProgress(progressStep);
     };
 
     function updateQuizProgress(step) {
-        const percent = (step / totalQuizSteps) * 100;
-        document.getElementById('quiz-progress-fill').style.width = `${percent}%`;
-        document.getElementById('quiz-current-step').textContent = step;
+        let percent = (Math.floor(step) / totalQuizSteps) * 100;
+        if (step === 1.5) percent = 35; 
+        const progressFill = document.getElementById('quiz-progress-fill');
+        const currentStepEl = document.getElementById('quiz-current-step');
+        if (progressFill) progressFill.style.width = `${percent}%`;
+        if (currentStepEl) currentStepEl.textContent = Math.floor(step);
     }
 
-    window.submitQuiz = function() {
+    window.handleStep1Next = function() {
+        const selectedType = document.querySelector('input[name="siteType"]:checked');
+        if (!selectedType) return;
+        
+        if (selectedType.value === 'constructor') {
+            nextQuizStep('constructor');
+        } else {
+            nextQuizStep(2);
+        }
+    };
+
+    window.handleStep2Back = function() {
+        const selectedType = document.querySelector('input[name="siteType"]:checked');
+        if (selectedType && selectedType.value === 'constructor') {
+            prevQuizStep('constructor');
+        } else {
+            prevQuizStep(1);
+        }
+    };
+
+    window.openConstructorQuiz = function() {
+        document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
+        const constructorRadio = document.querySelector('input[name="siteType"][value="constructor"]');
+        if (constructorRadio) constructorRadio.checked = true;
+        handleStep1Next();
+    };
+
+    window.submitQuizToWhatsApp = function() {
+        const siteTypeRadio = document.querySelector('input[name="siteType"]:checked');
+        let siteType = siteTypeRadio ? siteTypeRadio.nextElementSibling.querySelector('.option-title').innerText : '';
+        
+        let blocks = [];
+        if (siteTypeRadio && siteTypeRadio.value === 'constructor') {
+            document.querySelectorAll('input[name="constructorBlocks"]:checked').forEach(cb => {
+                blocks.push(cb.value);
+            });
+        }
+        
+        const designStatusRadio = document.querySelector('input[name="designStatus"]:checked');
+        let designStatus = designStatusRadio ? designStatusRadio.value : 'Не указано';
+
+        const adStatusRadio = document.querySelector('input[name="adStatus"]:checked');
+        let adStatus = adStatusRadio ? adStatusRadio.value : 'Не указано';
+        
+        let text = `🔥 Заявка с калькулятора (Скидка 5%)\n\nЗдравствуйте! Хочу посоветоваться по разработке сайта.\n\n`;
+        text += `🔹 Тип сайта: ${siteType}\n`;
+        if (blocks.length > 0) {
+            text += `🔹 Выбранные блоки (Конструктор): ${blocks.join(', ')}\n`;
+        }
+        text += `🔹 Дизайн: ${designStatus}\n`;
+        text += `🔹 Реклама и трафик: ${adStatus}\n`;
+
+        const encodedText = encodeURIComponent(text);
+        window.open(`https://wa.me/77770000000?text=${encodedText}`, '_blank');
+        
         document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active'));
         document.getElementById('quiz-step-success').classList.add('active');
         document.querySelector('.quiz-progress').style.display = 'none';
-        // Here you would typically send data to server/WhatsApp
     };
 
     // --- 9. FORM SUBMISSIONS (Mock) ---
@@ -179,10 +275,16 @@ document.addEventListener('DOMContentLoaded', () => {
         sendToWhatsApp('concept-name', 'concept-task', '🎨 Заявка на бесплатный концепт');
     };
     window.submitCtaForm = function() {
-        sendToWhatsApp('cta-name', 'cta-task', '💬 Заявка из нижнего блока');
+        const taskEl = document.getElementById('cta-task');
+        const task = taskEl && taskEl.value.trim() ? taskEl.value.trim() : 'Создание сайта под ключ';
+        let text = `💬 Заявка на обсуждение проекта\n\nЗдравствуйте! Хочу обсудить задачу:\n${task}`;
+        const encodedText = encodeURIComponent(text);
+        window.open(`https://wa.me/77770000000?text=${encodedText}`, '_blank');
     };
     window.submitExitForm = function() {
-        sendToWhatsApp('exit-name', 'exit-task', '🎁 Заявка с Exit-PopUp (скидка 10%)');
+        let text = `🎁 Заявка с Exit-PopUp (скидка 10%)\n\nЗдравствуйте! Хочу зафиксировать скидку 10% на разработку сайта.`;
+        const encodedText = encodeURIComponent(text);
+        window.open(`https://wa.me/77770000000?text=${encodedText}`, '_blank');
         closeModal('exitModal');
     };
     window.submitModalForm = function() {
