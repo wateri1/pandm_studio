@@ -163,17 +163,30 @@
     justify-content: space-between;
     align-items: center;
     height: 80px;
+    gap: var(--space-md);
+}
+
+.header-logo {
+    flex-shrink: 0;
 }
 
 .header-logo .logo-link {
     display: flex;
     align-items: center;
     gap: 12px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.logo-icon {
+    flex-shrink: 0;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .logo-title {
@@ -181,24 +194,30 @@
     font-weight: 800;
     font-size: 18px;
     color: var(--color-text-main);
-    line-height: 1.1;
+    line-height: 1.2;
     letter-spacing: -0.02em;
+    white-space: nowrap;
+    display: block;
 }
 
 .logo-subtitle {
     font-size: 11px;
     color: var(--color-text-muted);
     font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
+    display: block;
 }
 
 .header-nav {
     display: flex;
-    gap: var(--space-md);
+    gap: 16px;
+    align-items: center;
 }
 
 .nav-link {
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13.5px;
     color: var(--color-text-main);
     white-space: nowrap;
 }
@@ -210,7 +229,8 @@
 .header-actions {
     display: flex;
     align-items: center;
-    gap: var(--space-md);
+    gap: 12px;
+    flex-shrink: 0;
 }
 
 .status-badge {
@@ -277,12 +297,12 @@
 @media (max-width: 1024px) {
     .header-nav { display: none; }
     .status-badge { display: none; }
+    .burger-btn { display: flex; }
 }
 
 @media (max-width: 768px) {
     .header-phone { display: none; }
     .header-actions .btn { display: none; }
-    .burger-btn { display: flex; }
 }
 
 /* ==========================================================================
@@ -296,7 +316,7 @@
 
 .hero-container {
     display: grid;
-    grid-template-columns: 60fr 40fr;
+    grid-template-columns: 1fr 1.08fr;
     gap: var(--space-2xl);
     align-items: center;
 }
@@ -341,117 +361,274 @@
     flex-shrink: 0;
 }
 
-/* 3D Laptop Mockup Placeholder */
-.laptop-mockup {
-    position: relative;
+/* Hero Team Showcase (Replaces 3D Laptop) */
+.hero-visual {
     width: 100%;
-    padding-bottom: 60%;
-    perspective: 1000px;
+    max-width: 660px;
+    margin-left: auto;
 }
 
-.laptop-screen {
-    position: absolute;
-    top: 0;
-    left: 5%;
-    width: 90%;
-    height: 95%;
-    background-color: #1e1e1e;
-    border-radius: 12px 12px 0 0;
-    border: 8px solid #cbd5e1;
-    border-bottom: none;
-    transform: rotateY(-15deg) rotateX(5deg);
-    box-shadow: -20px 20px 40px rgba(15, 23, 42, 0.1);
-    transition: transform 0.5s ease;
+.hero-team-card {
+    position: relative;
+    width: 100%;
+    border-radius: 28px;
+    background: linear-gradient(165deg, #FFFFFF 0%, #F8FAFC 52%, #EFF4F9 100%);
+    border: 1px solid var(--color-border-subtle);
+    box-shadow: 0 24px 50px -12px rgba(15, 23, 42, 0.09), 0 2px 6px rgba(15, 23, 42, 0.04);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out), border-color 0.3s ease;
 }
 
-.laptop-mockup:hover .laptop-screen {
-    transform: rotateY(-5deg) rotateX(2deg);
+.hero-team-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primary-border);
+    box-shadow: 0 32px 68px -15px rgba(37, 99, 235, 0.14), 0 4px 16px rgba(15, 23, 42, 0.05);
 }
 
-.laptop-base {
+.hero-team-backdrop {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 5%;
-    background-color: #94a3b8;
-    border-radius: 0 0 16px 16px;
-    transform: rotateY(-15deg) rotateX(5deg);
-    transition: transform 0.5s ease;
+    inset: 0;
+    pointer-events: none;
+    background: 
+        radial-gradient(circle at 50% 18%, rgba(37, 99, 235, 0.1) 0%, transparent 65%),
+        radial-gradient(circle at 90% 80%, rgba(5, 150, 105, 0.07) 0%, transparent 50%),
+        radial-gradient(rgba(148, 163, 184, 0.18) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 20px 20px;
+    z-index: 1;
 }
 
-.laptop-mockup:hover .laptop-base {
-    transform: rotateY(-5deg) rotateX(2deg);
-}
-
-.bg-gradient {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #eff6ff 0%, #bfdbfe 100%);
-    position: relative;
-}
-
-.mockup-ui {
-    padding: 10px;
-}
-
-.mockup-header {
-    height: 10px;
-    background: rgba(255,255,255,0.8);
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-.mockup-hero {
-    height: 40px;
-    background: #2563eb;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-.mockup-cards {
-    display: flex;
-    gap: 8px;
-}
-
-.m-card {
-    flex: 1;
-    height: 60px;
-    background: #fff;
-    border-radius: 4px;
-}
-
-.static-metrics-container {
-    margin-top: 24px;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.static-badge {
-    background: #fff;
-    padding: 8px 16px;
+/* Floating Badges */
+.floating-badge {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(226, 232, 240, 0.95);
     border-radius: var(--radius-pill);
-    box-shadow: var(--shadow-modal);
-    display: flex;
+    box-shadow: 0 10px 24px -6px rgba(15, 23, 42, 0.1), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+    z-index: 4;
+    display: inline-flex;
     align-items: center;
+    transition: transform 0.3s var(--ease-out);
+    user-select: none;
+}
+
+.floating-badge:hover {
+    transform: translateY(-2px);
+}
+
+.floating-badge.badge-direct {
+    top: 20px;
+    left: 20px;
+    padding: 8px 16px;
     gap: 8px;
-    font-weight: 700;
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: 600;
     color: var(--color-text-main);
 }
 
-.static-badge .circle {
-    width: 24px;
-    height: 24px;
+.pulse-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
     background-color: var(--color-trust-green);
-    color: #fff;
+    box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.5);
+    animation: pulse-green 2s infinite;
+    flex-shrink: 0;
+}
+
+.floating-badge.badge-speed {
+    top: 20px;
+    right: 20px;
+    padding: 6px 14px 6px 8px;
+    gap: 9px;
+}
+
+.floating-badge.badge-speed .circle {
+    width: 32px;
+    height: 32px;
+    background-color: var(--color-trust-green);
+    color: #ffffff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: var(--font-numeric);
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
+}
+
+.badge-meta {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 1.15;
+}
+
+.badge-meta .badge-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    font-family: var(--font-numeric);
+}
+
+.badge-meta .badge-sub {
     font-size: 10px;
+    color: var(--color-trust-green);
+    font-weight: 600;
+}
+
+/* Image Presentation */
+.hero-team-image-box {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-top: 68px;
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hero-team-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 18px 28px rgba(15, 23, 42, 0.15));
+    transition: transform 0.4s var(--ease-out);
+    margin: 0 auto;
+}
+
+.hero-team-card:hover .hero-team-img {
+    transform: scale(1.02);
+}
+
+/* Roles & Names Grid (Left: Vladislav, Right: Dmitry) */
+.hero-team-members {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.team-member-col {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.team-member-col.member-marketing {
+    text-align: left;
+    align-items: flex-start;
+}
+
+.team-member-col.member-dev {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.member-role-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #0284c7;
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    padding: 3px 9px;
+    border-radius: var(--radius-pill);
+}
+
+.member-role-pill.pill-dev {
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+    border-color: var(--color-primary-border);
+}
+
+.member-name {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--color-text-main);
+    line-height: 1.2;
+}
+
+.member-desc {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    line-height: 1.35;
+    font-weight: 500;
+}
+
+.team-member-divider {
+    width: 1px;
+    height: 52px;
+    background: var(--color-border-subtle);
+}
+
+/* Card Bottom Bar */
+.hero-team-footer {
+    position: relative;
+    z-index: 3;
+    padding: 14px 24px;
+    background: #ffffff;
+    border-top: 1px solid var(--color-border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.hero-team-brand {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13.5px;
+}
+
+.author-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.author-team-label {
+    font-weight: 700;
+    color: var(--color-text-main);
+    font-family: var(--font-display);
+}
+
+.author-role {
+    color: var(--color-text-muted);
+}
+
+.author-guarantee {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+    border: 1px solid var(--color-primary-border);
+    padding: 5px 12px;
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
 }
 
 @media (max-width: 1024px) {
@@ -459,8 +636,62 @@
         grid-template-columns: 1fr;
     }
     .hero-visual {
-        max-width: 600px;
-        margin: 0 auto;
+        max-width: 660px;
+        margin: var(--space-xl) auto 0 auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-team-card {
+        border-radius: 22px;
+    }
+    .floating-badge.badge-direct {
+        top: 12px;
+        left: 12px;
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    .floating-badge.badge-speed {
+        top: 12px;
+        right: 12px;
+        padding: 5px 8px;
+        gap: 6px;
+    }
+    .floating-badge.badge-speed .circle {
+        width: 24px;
+        height: 24px;
+        font-size: 10px;
+    }
+    .badge-meta .badge-title {
+        font-size: 10px;
+    }
+    .badge-meta .badge-sub {
+        display: none;
+    }
+    .hero-team-image-box {
+        padding-top: 54px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .hero-team-members {
+        padding: 14px 16px;
+        gap: 10px;
+    }
+    .member-name {
+        font-size: 15px;
+    }
+    .member-desc {
+        font-size: 11px;
+    }
+    .hero-team-footer {
+        padding: 12px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .author-guarantee {
+        align-self: flex-start;
     }
 }
 

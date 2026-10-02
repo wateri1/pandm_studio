@@ -235,23 +235,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const adStatusRadio = document.querySelector('input[name="adStatus"]:checked');
         let adStatus = adStatusRadio ? adStatusRadio.value : 'Не указано';
         
-        let text = `🔥 Заявка с калькулятора (Скидка 5%)\n\nЗдравствуйте! Хочу посоветоваться по разработке сайта.\n\n`;
-        text += `🔹 Тип сайта: ${siteType}\n`;
+        let text = `• Заявка с калькулятора (Скидка 5%)\n\nЗдравствуйте! Хочу посоветоваться по разработке сайта.\n\n`;
+        text += `• Тип сайта: ${siteType}\n`;
         if (blocks.length > 0) {
-            text += `🔹 Выбранные блоки (Конструктор): ${blocks.join(', ')}\n`;
+            text += `• Выбранные блоки (Конструктор): ${blocks.join(', ')}\n`;
         }
-        text += `🔹 Дизайн: ${designStatus}\n`;
-        text += `🔹 Реклама и трафик: ${adStatus}\n`;
+        text += `• Дизайн: ${designStatus}\n`;
+        text += `• Реклама и трафик: ${adStatus}\n`;
 
+        const WHATSAPP_PHONE = '77085667448';
         const encodedText = encodeURIComponent(text);
-        window.open(`https://wa.me/77770000000?text=${encodedText}`, '_blank');
+        window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodedText}`, '_blank');
         
         document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active'));
         document.getElementById('quiz-step-success').classList.add('active');
         document.querySelector('.quiz-progress').style.display = 'none';
     };
 
-    // --- 9. FORM SUBMISSIONS (Mock) ---
+    // --- 9. FORM SUBMISSIONS ---
+    const WHATSAPP_PHONE = '77085667448';
+
     function sendToWhatsApp(nameId, taskId, prefix) {
         const nameEl = document.getElementById(nameId);
         const taskEl = document.getElementById(taskId);
@@ -264,31 +267,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         const encodedText = encodeURIComponent(text);
-        window.open(`https://wa.me/77770000000?text=${encodedText}`, '_blank');
+        window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodedText}`, '_blank');
     }
 
     // --- 9. FORM SUBMISSIONS ---
     window.submitHeroForm = function() {
-        sendToWhatsApp('hero-name', 'hero-task', '🔥 Заявка с главного экрана');
+        sendToWhatsApp('hero-name', 'hero-task', '• Заявка с главного экрана');
     };
     window.submitConceptForm = function() {
-        sendToWhatsApp('concept-name', 'concept-task', '🎨 Заявка на бесплатный концепт');
+        sendToWhatsApp('concept-name', 'concept-task', '• Заявка на бесплатный концепт');
     };
     window.submitCtaForm = function() {
         const taskEl = document.getElementById('cta-task');
         const task = taskEl && taskEl.value.trim() ? taskEl.value.trim() : 'Создание сайта под ключ';
-        let text = `💬 Заявка на обсуждение проекта\n\nЗдравствуйте! Хочу обсудить задачу:\n${task}`;
+        let text = `• Заявка на обсуждение проекта\n\nЗдравствуйте! Хочу обсудить задачу:\n${task}`;
         const encodedText = encodeURIComponent(text);
-        window.open(`https://wa.me/77770000000?text=${encodedText}`, '_blank');
+        window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodedText}`, '_blank');
     };
     window.submitExitForm = function() {
-        let text = `🎁 Заявка с Exit-PopUp (скидка 10%)\n\nЗдравствуйте! Хочу зафиксировать скидку 10% на разработку сайта.`;
+        let text = `• Заявка с сайта (Скидка 10%)\n\nЗдравствуйте! Хочу зафиксировать скидку 10% на разработку сайта.`;
         const encodedText = encodeURIComponent(text);
-        window.open(`https://wa.me/77770000000?text=${encodedText}`, '_blank');
+        window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodedText}`, '_blank');
         closeModal('exitModal');
     };
     window.submitModalForm = function() {
-        sendToWhatsApp('modal-name', 'modal-task', '📩 Быстрая заявка');
+        sendToWhatsApp('modal-name', 'modal-task', '• Быстрая заявка');
         closeModal('contactModal');
     };
 });
