@@ -1,0 +1,4 @@
+# Temp preview caches
+pdf_preview/
+.DS_Store
+Thumbs.db
